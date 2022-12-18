@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import GlobalLoading from "../common/GlobalLoading";
 import Footer from "../common/Footer";
+import Header from "../common/Header";
 
 const MainLayout = () => {
   return (
@@ -12,6 +13,7 @@ const MainLayout = () => {
       {/* loading */}
       <Box display="flex" minHeight="100ch">
         {/* header */}
+        <Header />
         {/* header */}
 
         {/* main */}
