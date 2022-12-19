@@ -15,8 +15,10 @@ import { cloneElement } from "react";
 import { Link } from "react-router-dom";
 import menuConfigs from "../../configs/menu.configs";
 import { themeModes } from "../../configs/theme.configs";
+import { setAuthModalOpen } from "../../redux/features/authModalSlice";
 import { setThemeMode } from "../../redux/features/themeModeSlice";
 import Logo from "./Logo";
+import UserMenu from "./UserMenu";
 
 const ScrollAppBar = ({ children, window }) => {
   const { themeMode } = useSelector((state) => state.themeMode);
@@ -43,6 +45,7 @@ const ScrollAppBar = ({ children, window }) => {
   });
 };
 const Header = () => {
+  const { user } = useSelector((state) => state.user);
   const { appState } = useSelector((state) => state.appState);
   const { themeMode } = useSelector((state) => state.themeMode);
 
@@ -105,6 +108,20 @@ const Header = () => {
               </IconButton>
             </Box>
             {/* main menu */}
+
+            {/* user menu */}
+            <Stack spacing={3} direction="row" alignItems="center">
+              {!user && (
+                <Button
+                  variant="contained"
+                  onClick={() => dispatch(setAuthModalOpen(true))}
+                >
+                  sign in
+                </Button>
+              )}
+            </Stack>
+            {user && <UserMenu />}
+            {/* user menu */}
           </Toolbar>
         </AppBar>
       </ScrollAppBar>
