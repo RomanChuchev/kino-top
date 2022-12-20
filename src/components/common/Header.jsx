@@ -6,6 +6,7 @@ import {
   AppBar,
   Box,
   Button,
+  CircularProgress,
   IconButton,
   Stack,
   Toolbar,
@@ -118,7 +119,11 @@ const Header = () => {
 
             {/* user menu */}
             <Stack spacing={3} direction="row" alignItems="center">
-              {!user && (
+              {user === undefined ? (
+                <CircularProgress color="primary" />
+              ) : user !== null ? (
+                <UserMenu />
+              ) : (
                 <Button
                   variant="contained"
                   onClick={() => dispatch(setAuthModalOpen(true))}
@@ -127,7 +132,6 @@ const Header = () => {
                 </Button>
               )}
             </Stack>
-            {user && <UserMenu />}
             {/* user menu */}
           </Toolbar>
         </AppBar>
