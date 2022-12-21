@@ -9,13 +9,13 @@ import ReviewList from "../pages/ReviewList";
 import ProtectedPage from "../components/common/ProtectedPage";
 
 export const routesGen = {
-  home: "/",
-  mediaList: (type) => `/${type}`,
-  mediaDetail: (type, id) => `/${type}/${id}`,
-  mediaSearch: "/search",
-  person: (id) => `/person/${id}`,
-  favoriteList: "/favorites",
-  reviewList: "/reviews",
+  home: "/kino-top/",
+  mediaList: (type) => `/kino-top/${type}`,
+  mediaDetail: (type, id) => `/kino-top/${type}/${id}`,
+  mediaSearch: "/kino-top/search",
+  person: (id) => `/kino-top/person/${id}`,
+  favoriteList: "/kino-top/favorites",
+  reviewList: "/kino-top/reviews",
   passwordUpdate: "password-update",
 };
 
@@ -26,17 +26,17 @@ const routes = [
     state: "home",
   },
   {
-    path: "/person/:personId",
+    path: "/kino-top/person/:personId",
     element: <PersonDetail />,
     state: "person.detail",
   },
   {
-    path: "/search",
+    path: "/kino-top/search",
     element: <MediaSearch />,
     state: "search",
   },
   {
-    path: "/password-update",
+    path: "/kino-top/password-update",
     element: (
       <ProtectedPage>
         <PasswordUpdate />
@@ -45,7 +45,7 @@ const routes = [
     state: "password.update",
   },
   {
-    path: "/favorites",
+    path: "/kino-top/favorites",
     element: (
       <ProtectedPage>
         <FavoriteList />
@@ -54,7 +54,7 @@ const routes = [
     state: "favorites",
   },
   {
-    path: "/reviews",
+    path: "/kino-top/reviews",
     element: (
       <ProtectedPage>
         <ReviewList />
@@ -63,11 +63,11 @@ const routes = [
     state: "reviews",
   },
   {
-    path: "/:mediaType",
+    path: "/kino-top/:mediaType",
     element: <MediaList />,
   },
   {
-    path: "/:mediaType/:mediaId",
+    path: "/kino-top/:mediaType/:mediaId",
     element: <MediaDetail />,
   },
 ];

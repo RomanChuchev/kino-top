@@ -35,7 +35,7 @@ const App = () => {
       {/* app routes */}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainLayout />}>
+          <Route path="/kino-top" element={<MainLayout />}>
             {routes.map((route, index) =>
               route.index ? (
                 <Route
