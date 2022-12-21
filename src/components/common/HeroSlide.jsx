@@ -86,9 +86,9 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
         loop={true}
         modules={[Autoplay]}
         style={{ width: "100%", height: "max-content" }}
-        speed={1200}
+        speed={2000}
         autoplay={{
-          delay: 2000,
+          delay: 2500,
           disableOnInteraction: false,
         }}
       >

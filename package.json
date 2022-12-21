@@ -1,6 +1,7 @@
 {
   "name": "kino-top",
   "version": "1.0.0",
+  "homepage": "https://romanchuchev.github.io/kino-top/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
