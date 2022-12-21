@@ -50,6 +50,7 @@ const Header = () => {
   const { user } = useSelector((state) => state.user);
   const { appState } = useSelector((state) => state.appState);
   const { themeMode } = useSelector((state) => state.themeMode);
+  const { globalLoading } = useSelector((state) => state.globalLoading);
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -119,8 +120,10 @@ const Header = () => {
 
             {/* user menu */}
             <Stack spacing={3} direction="row" alignItems="center">
-              {user === undefined ? (
-                <CircularProgress color="primary" />
+              {globalLoading ? (
+                <>
+                  <CircularProgress color="primary" />
+                </>
               ) : user !== null ? (
                 <UserMenu />
               ) : (
