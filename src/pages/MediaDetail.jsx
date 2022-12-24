@@ -28,6 +28,7 @@ import BackdropSlide from "../components/common/BackdropSlide";
 import PosterSlide from "../components/common/PosterSlide";
 import RecommendSlide from "../components/common/RecommendSlide";
 import MediaSlide from "../components/common/MediaSlide";
+import MediaReview from "../components/common/MediaReview";
 
 const MediaDetail = () => {
   const { mediaType, mediaId } = useParams();
@@ -282,6 +283,14 @@ const MediaDetail = () => {
           </Container>
         )}
         {/* media posters */}
+
+        {/* media reviews */}
+        <MediaReview
+          reviews={media.reviews}
+          media={media}
+          mediaType={mediaType}
+        />
+        {/* media reviews */}
 
         {/* media recommendation */}
         <Container header="you may also like">
