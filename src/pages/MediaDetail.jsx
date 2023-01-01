@@ -12,7 +12,6 @@ import { toast } from "react-toastify";
 import CircularRate from "../components/common/CircularRate";
 import Container from "../components/common/Container";
 import ImageHeader from "../components/common/ImageHeader";
-
 import uiConfigs from "../configs/ui.configs";
 import tmdbConfigs from "../api/configs/tmdb.config.js";
 import mediaApi from "../api/modules/media.api";
@@ -119,7 +118,6 @@ const MediaDetail = () => {
       toast.success("Remove favorite success");
     }
   };
-
   return media ? (
     <>
       <ImageHeader
